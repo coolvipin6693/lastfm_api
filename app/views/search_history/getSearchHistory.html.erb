@@ -1,0 +1,28 @@
+<h3>Your Recent Searches </h3>
+
+
+<table class="table table-hover">
+	<thead>
+		<tr>
+			<th>Keyword Searched</th>
+			<th>TimeStamp</th>
+		</tr>
+	</thead>
+	<tbody>
+	<% if  @result.length %>
+	    <%= @result.each do |r| %>
+	        <tr>
+	          <td><%= r.keyword %></td>
+	          <td><%= r.created_at %></td>
+	        </tr>
+	    <% end %>
+	<% else %>
+	    <tr>
+	      <td>No Results to show!</td>
+	    </tr>
+	<% end %>
+	</tbody>
+</table>
+
+<br><br>
+<%= link_to "Home Page", root_path, class: "btn btn-primary" %>

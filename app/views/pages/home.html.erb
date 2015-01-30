@@ -1,0 +1,45 @@
+<h1>Welcome to MyApp</h1>
+
+<p>
+	<% if user_signed_in? %>
+
+		Please Enter Text in the search box below and hit GO !<br><br>
+
+		<div class="input-group">
+	      <input type="text" class="form-control" id="searchParam" placeholder="Enter Artist Name...">
+	      <span class="input-group-btn">
+	        <button class="btn btn-default" type="button" onclick="search()">Go!</button>
+	      </span>
+	    </div>
+
+	    <div id="loader-ajax">
+	    	<%= image_tag "17.gif" %>
+	    </div>
+
+	    <div class="jumbotron" id="mainpanel">
+	    	<div class="col-md-4" id="pic"></div>
+	    	<div class="col-md-8" id="desc"></div><br><br>
+	    	<br><div id="tags"></div>
+	    </div>
+
+	    <br><br>
+
+	    <div id="toptracks" class="btn btn-primary" onclick="gettracks()">
+			See Top Tracks by this Artist    	
+	    </div>
+	    
+	    <table class="table table-hover" id="tracklist">
+		        <tbody>
+		        </tbody>
+		</table>
+
+	    <div id="similarArtists">
+	    	
+	    </div>
+		
+	<% else %>
+
+		Please Log in to search for artists!
+
+	<% end %>
+</p>
